@@ -8,18 +8,21 @@ class ProductTag extends Model {}
 ProductTag.init(
   {
     // define columns
+    //id that will auto populate
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
       autoIncrement: true,
     },
+    //accociated product id
     product_id: {
       type: DataTypes.INTEGER,
       references: {
         model: "product",
         key: "id",
       },     },
+      //accociated tag id
     tag_id: {
       type: DataTypes.INTEGER,
       references: {

@@ -10,16 +10,19 @@ class Product extends Model {}
 Product.init(
   {
     // define columns
+    //id which will auto populate
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
       autoIncrement: true,
     },
+    //name
     product_name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
+    //price
     price: {
       type: DataTypes.DECIMAL,
       allowNull: false,
@@ -27,6 +30,7 @@ Product.init(
         isDecimal: true,
       },
     },
+    //stock (number in stock)
     stock: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -35,6 +39,7 @@ Product.init(
         isNumeric: true,
       },
     },
+    //accosiated category IDs
     category_id: {
       type: DataTypes.INTEGER,
       references: {
